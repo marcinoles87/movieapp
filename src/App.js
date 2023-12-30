@@ -9,6 +9,9 @@ function App() {
 
   useEffect( () => {
 
+    fetch('https://jsonplaceholder.typicode.com/photos')
+    .then( (response) => response.json())
+    .then( (actualDta) => console.log(actualDta))
   }, [])
   return (
     <div className="App">
