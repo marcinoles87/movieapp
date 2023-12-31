@@ -7,17 +7,15 @@ function App() {
   const [data , setData] = useState();
   const [error , setError] = useState(false);
 
-  
+
   useEffect( () => {
 
     fetch('https://jsonplaceholder.typicode.com/photos')
     .then( (response) => response.json())
-    .then( (actualData) => console.log(actualData))
+    .then( (actualData) => setData(actualData))
     .then( setError(true) )
+    
  
-
-
-
   }, [])
 
 
@@ -25,7 +23,7 @@ function App() {
   return (
     <div className="App">
      
-     {/* <Movie data={data ? !error : error}></Movie> */}
+     <Movie data={error ? data : error}></Movie>
     </div>
   );
 }
