@@ -3,7 +3,7 @@ import React from 'react'
 function Movie({data}) {
   return (
     <div className='movie-container'>
-      <div className='movies-data'>
+      {/* <div className='movies-data'>
         {data.map( (movie) => {
           return(
           <div className='movie-item'>
@@ -12,7 +12,7 @@ function Movie({data}) {
             </div>
        ) })}
         
-      </div>
+      </div> */}
     </div>
   )
 }
