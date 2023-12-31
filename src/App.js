@@ -7,16 +7,24 @@ function App() {
   const [data , setData] = useState();
   const [error , setError] = useState();
 
+  
   useEffect( () => {
 
+    async function getData(){
     fetch('https://jsonplaceholder.typicode.com/photos')
     .then( (response) => response.json())
-    .then( (actualDta) => console.log(actualDta))
+    .then( (actualData) => setData(actualData))
+  
+    }
+
+    getData()
   }, [])
+
+  
   return (
     <div className="App">
      
-     <Movie></Movie>
+     <Movie data={data}></Movie>
     </div>
   );
 }
