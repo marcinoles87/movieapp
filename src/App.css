@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.movie-container{
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.movies-data{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.movies-data h1{
+    font-size: 20px;
+}

@@ -10,20 +10,21 @@ function App() {
 
   useEffect( () => {
 
-    fetch('https://jsonplaceholder.typicode.com/photos')
+    fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
     .then( (response) => response.json())
     .then( (actualData) => setData(actualData))
     .then( setError(true) )
     
- 
-  }, [])
+
+  }, [error])
+
 
 
   
   return (
     <div className="App">
      
-     <Movie data={error ? data : error}></Movie>
+     <Movie data={error ? data : error} error={error}></Movie>
     </div>
   );
 }
