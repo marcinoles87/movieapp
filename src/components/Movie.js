@@ -12,8 +12,8 @@ function Movie({data , error}) {
         { data ?  data.map( (movie , index) => {
           return(
           <div key={index} className='movie-item'>
-            <h1>{index} . {movie.title}</h1>
             <img src={movie.thumbnailUrl}></img>
+            <h1>{movie.title}</h1>
             </div>
        ) })  : error }
         
