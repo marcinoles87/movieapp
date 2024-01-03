@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [data , setData] = useState();
+  const [postData , setPostdata ] = useState();
   const [error , setError] = useState(false);
 
 
@@ -18,13 +19,23 @@ function App() {
 
   }, [error])
 
+  useEffect( () => {
+
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then( (response) => response.json())
+    .then( (actualData) => setPostdata(actualData))
+    .then( setError(true) )
+    
+
+  }, [error])
+
 
 
   
   return (
     <div className="App">
      
-     <Movie data={error ? data : error} error={error}></Movie>
+     <Movie  dataPost={error ? postData : error} data={error ? data : error} error={error}></Movie>
     </div>
   );
 }
