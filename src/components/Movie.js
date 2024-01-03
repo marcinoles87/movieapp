@@ -3,9 +3,11 @@ import React from 'react'
 
 function Movie({dataPost , data , error}) {
 
+  
+
  const handleOnClick = () => {
   console.log('dziala')
-  console.log(dataPost)
+ 
  }
  
   return (
