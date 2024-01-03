@@ -3,10 +3,18 @@ import React from 'react'
 
 function Movie({dataPost , data , error}) {
 
-  
+  let start = 0
+  let newX = -150
 
  const handleOnClick = () => {
-  console.log('dziala')
+  
+  start+=newX
+  const movie = document.querySelector('.movies-data');
+  console.log(movie)
+  movie.style.transform = "translateX(" + start + "px)"
+  
+
+
  
  }
  
