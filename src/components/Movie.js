@@ -3,7 +3,7 @@ import React from 'react'
 
 function Movie({data , error}) {
 
- 
+ console.log(data)
  
   return (
     <div className='movie-container'>
@@ -18,6 +18,7 @@ function Movie({data , error}) {
        ) })  : error }
         
        
+       <button className='movie-button'> {`>`}</button>
         
       </div>
     </div>

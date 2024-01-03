@@ -39,3 +39,12 @@
     align-items: center;
     
 }
+
+.movie-button{
+    position: absolute;
+    top: 20%;
+    right: 30px;
+    background-color: white;
+    width: 5%;
+    height: 10%;
+}
