@@ -8,6 +8,11 @@ function App() {
   const [postData , setPostdata ] = useState();
   const [error , setError] = useState(false);
 
+  let start = 0
+  let newX = -150
+  let startX = 0
+  let newButtonX = 150
+
 
   useEffect( () => {
 
@@ -29,31 +34,37 @@ function App() {
 
   }, [error])
 
-  let start = 0
-  let newX = -150
-  let startX = 0
-  let newButtonX = 150
+ 
 
- const handleOnClick = () => {
+ const handleOnClickNext = () => {
   
-  start+=newX
-  startX+=newButtonX
+    start+=newX
+    startX+=newButtonX
+    const movie = document.querySelector('.movies-data');
+    console.log(movie)
+    movie.style.transform = "translateX(" + start + "px)"
+    const button = document.querySelector('.movie-button-next');
+    button.style.transform = "translateX("+ newButtonX +" +px)"
+ }
+
+ const handleOnClickPrev = () => {
+  
+  start-=newX
+  startX-=newButtonX
   const movie = document.querySelector('.movies-data');
   console.log(movie)
   movie.style.transform = "translateX(" + start + "px)"
-  const button = document.querySelector('.movie-button');
+  const button = document.querySelector('.movie-button-prev');
   button.style.transform = "translateX("+ newButtonX +" +px)"
-
-
- 
- }
+}
 
   
   return (
     <div className="App">
      
      <Movie  dataPost={error ? postData : error} data={error ? data : error} error={error}></Movie>
-     <button className='movie-button' onClick={handleOnClick}> {`>`}</button>
+     <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
+     <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
     </div>
   );
 }

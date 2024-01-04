@@ -44,11 +44,24 @@
     
 }
 
-.movie-button{
+.movie-button-next{
     position: sticky;
     top: 20%;
     right: 30px;
-    background-color: white;
-    width: 5%;
+    background-color:transparent;
+    width: 8%;
     height: 10%;
+    color:white;
+   
+}
+
+.movie-button-prev{
+    position: sticky;
+    top: 20%;
+    right: 30px;
+    background-color:transparent;
+    width: 8%;
+    height: 10%;
+    color:white;
+   
 }
