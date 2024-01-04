@@ -62,9 +62,9 @@ function App() {
   return (
     <div className="App">
      
-     <Movie  dataPost={error ? postData : error} data={error ? data : error} error={error}></Movie>
-     <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
-     <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
+        <Movie  dataPost={error ? postData : error} data={error ? data : error} error={error}></Movie>
+        <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
+        <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>
   );
 }

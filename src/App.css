@@ -45,23 +45,25 @@
 }
 
 .movie-button-next{
-    position: sticky;
-    top: 20%;
+    position: fixed;
+    top: 30%;
     right: 30px;
+    width: 50px;
+    height: 50px;
     background-color:transparent;
-    width: 8%;
-    height: 10%;
     color:white;
+    border: 2px solid rgb(32, 0, 97);
    
 }
 
 .movie-button-prev{
-    position: sticky;
-    top: 20%;
-    right: 30px;
+    position: fixed;
+    top: 30%;
+    left: 30px;
+    width: 50px;
+    height: 50px;
     background-color:transparent;
-    width: 8%;
-    height: 10%;
     color:white;
+    border: 2px solid rgb(32, 0, 97);
    
 }
