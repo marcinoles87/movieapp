@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [data , setData] = useState();
-  const [postData , setPostdata ] = useState();
   const [error , setError] = useState(false);
+  const [omdbData , setOmdb] = useState([])
 
   let start = 0
   let newX = -150
@@ -14,32 +14,37 @@ function App() {
   let newButtonX = 150
 
 
+ 
+
   useEffect( () => {
+
+    const fetchData = async () => {
+
+      const URL = 'http://www.omdbapi.com/?s=bat&apikey=5217a1e0&i';
+      const response = await fetch(URL);
+      const finalData =await response.json();
+      
+      setOmdb(finalData.Search)
+    
+    }
+
+    fetchData()
+    
+  }, [])
+
+  console.log(omdbData)
+
+
+   useEffect( () => {
 
     fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
     .then( (response) => response.json())
     .then( (actualData) => setData(actualData))
     .then( setError(true) )
+    console.log(data)
     
 
   }, [error])
-
-  useEffect( () => {
-
-    const fetchData = async () => {
-      const URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=5217a1e0';
-      const response = await fetch(URL);
-      const finalData =await response.json();
-      console.log(finalData)
-
-    }
-
-    fetchData()
-    
-
-   
-
-  }, [])
 
  
 
@@ -68,8 +73,10 @@ function App() {
   
   return (
     <div className="App">
+
+    
      
-        <Movie  dataPost={error ? postData : error} data={error ? data : error} error={error}></Movie>
+        <Movie dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
         <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
         <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>

@@ -31,9 +31,12 @@
     width: 100px;
     font-size: 15px;
     margin: 10px;
+    color: rgb(201, 199, 199);
 }
 
 .movies-data img{
+    width: 250px;
+    height: 250px;
     margin: 1px;
 }
 

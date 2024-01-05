@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function Movie({dataPost , data , error}) {
+function Movie({dataOmdb ,  data , error}) {
 
 
  
@@ -9,7 +9,18 @@ function Movie({dataPost , data , error}) {
     <div className='movie-container'>
       <div className='movies-data'>
 
-        { data && dataPost ?  data.map( (movie , index) => {
+        {dataOmdb.map ( (data , index) => {
+          return(
+            <div className='movie-item'>
+              <img src={data.Poster} alt={index}></img>
+              <h1>{data.Title}</h1>
+              <p>Year : {data.Year}</p>
+              </div>
+          )
+        })}
+          
+
+        { data ? data.map( (movie , index) => {
           return(
           <div key={index} className='movie-item'>
             <img src={movie.thumbnailUrl} alt={movie.title}></img>
