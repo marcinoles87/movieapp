@@ -26,13 +26,20 @@ function App() {
 
   useEffect( () => {
 
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then( (response) => response.json())
-    .then( (actualData) => setPostdata(actualData))
-    .then( setError(true) )
+    const fetchData = async () => {
+      const URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=5217a1e0';
+      const response = await fetch(URL);
+      const finalData =await response.json();
+      console.log(finalData)
+
+    }
+
+    fetchData()
     
 
-  }, [error])
+   
+
+  }, [])
 
  
 
