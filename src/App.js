@@ -1,6 +1,8 @@
 import Movie from './components/Movie';
 import './App.css';
 import { useEffect, useState } from 'react';
+// import { Route, Router, Routes , Link } from 'react-router-dom';
+
 
 function App() {
 
@@ -9,9 +11,9 @@ function App() {
   const [omdbData , setOmdb] = useState([])
 
   let start = 0
-  let newX = -150
+  let newX = -250
   let startX = 0
-  let newButtonX = 150
+  let newButtonX = 250
 
 
  
@@ -20,9 +22,9 @@ function App() {
 
     const fetchData = async () => {
 
-      const URL = 'http://www.omdbapi.com/?s=bat&apikey=5217a1e0&i';
+      const URL = `http://www.omdbapi.com/?s=ame&apikey=5217a1e0&i`;
       const response = await fetch(URL);
-      const finalData =await response.json();
+      const finalData = await response.json();
       
       setOmdb(finalData.Search)
     
