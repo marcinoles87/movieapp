@@ -76,6 +76,12 @@ function App() {
   return (
     <div className="App">
 
+        <div className='movie-information'>
+          <div className='movie-information-head'>
+            <img className='' alt='movie-image'></img>
+          </div>
+        </div>
+
     
      
         <Movie dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
