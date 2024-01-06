@@ -9,11 +9,12 @@ function App() {
   const [data , setData] = useState();
   const [error , setError] = useState(false);
   const [omdbData , setOmdb] = useState([])
+  const [movie , setMovie] = useState([]);
 
   let start = 0
-  let newX = -250
+  let newX = -180
   let startX = 0
-  let newButtonX = 250
+  let newButtonX = 180
 
 
  
@@ -48,6 +49,10 @@ function App() {
 
   }, [error])
 
+  const getMovie = () => {
+    
+  }
+
  
 
  const handleOnClickNext = () => {
@@ -78,7 +83,7 @@ function App() {
 
         <div className='movie-information'>
           <div className='movie-information-head'>
-            <img className='' alt='movie-image'></img>
+            <img className={movie} alt='movie-image'></img>
           </div>
         </div>
 
