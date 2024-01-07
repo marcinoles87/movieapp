@@ -49,7 +49,10 @@ function App() {
 
   }, [error])
 
-  const getMovie = () => {
+  const getMovie = (item) => {
+    console.log(item)
+    console.log('dziala')
+    setMovie(item)
     
   }
 
@@ -84,12 +87,13 @@ function App() {
         <div className='movie-information'>
           <div className='movie-information-head'>
             <img className={movie} alt='movie-image'></img>
+            {movie}
           </div>
         </div>
 
     
      
-        <Movie dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
+        <Movie getMovie={getMovie} dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
         <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
         <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>

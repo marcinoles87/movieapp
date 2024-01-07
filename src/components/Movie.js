@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Movie({dataOmdb ,  data , error}) {
+function Movie({getMovie , dataOmdb ,  data , error}) {
 
  
   return (
@@ -9,8 +9,8 @@ function Movie({dataOmdb ,  data , error}) {
 
         {dataOmdb.map ( (data , index) => {
           return(
-            <div className='movie-item'>
-              <img src={data.Poster} alt={index}></img>
+            <div className='movie-item' key={index}>
+              <img src={data.Poster} alt={index} onClick={getMovie}></img>
               <h1>{data.Title}</h1>
               <p>Year : {data.Year}</p>
               </div>
