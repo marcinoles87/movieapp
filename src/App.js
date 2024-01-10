@@ -49,10 +49,14 @@ function App() {
 
   }, [error])
 
-  const getMovie = (item) => {
-    console.log(item)
-    console.log('dziala')
-    setMovie(item)
+
+  const handleGetElement = (e) => {
+    const movieIndex = e.target.alt
+    const activMovie = omdbData[movieIndex]
+    console.log(activMovie.Poster)
+    setMovie(activMovie.Poster)
+    
+
     
   }
 
@@ -86,14 +90,13 @@ function App() {
 
         <div className='movie-information'>
           <div className='movie-information-head'>
-            <img className={movie} alt='movie-image'></img>
-            {movie}
-          </div>
+            <img src={movie} className='movie-information-img'></img>
+            </div>
         </div>
 
     
      
-        <Movie getMovie={getMovie} dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
+        <Movie getMovie={handleGetElement} dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
         <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
         <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>
