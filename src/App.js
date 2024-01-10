@@ -10,7 +10,8 @@ function App() {
   const [error , setError] = useState(false);
   const [omdbData , setOmdb] = useState([])
   const [movie , setMovie] = useState([]);
-  const [movieInfo , setMovieInfo] = useState();
+  const [movieInfoTitle , setMovieInfo] = useState();
+  const [movieYear , setMovieYear] = useState()
 
   let start = 0
   let newX = -180
@@ -60,6 +61,7 @@ function App() {
     console.log(activMovie.Poster)
     setMovie(activMovie.Poster)
     setMovieInfo(movieTitle)
+    setMovieYear(movieYear)
     
 
     
@@ -95,7 +97,8 @@ function App() {
 
         <div className='movie-information'>
           <div className='movie-information-head'>
-            <h1>{movieInfo}</h1>
+            <h1>{movieInfoTitle}</h1>
+            <p>{movieYear}</p>
             <img src={movie} className='movie-information-img'></img>
             
             </div>
