@@ -95,14 +95,14 @@ function App() {
   return (
     <div className="App">
 
-        <div className='movie-information'>
+        
           <div className='movie-information-head'>
             <h1>{movieInfoTitle}</h1>
             <p>{movieYear}</p>
             <img src={movie} className='movie-information-img'></img>
             
             </div>
-        </div>
+      
 
     
      
