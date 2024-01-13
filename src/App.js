@@ -26,7 +26,7 @@ function App() {
 
     const fetchData = async () => {
 
-      const URL = `http://www.omdbapi.com/?s=ame&apikey=5217a1e0&i`;
+      const URL = `http://www.omdbapi.com/?s=bat&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
       
@@ -87,7 +87,6 @@ function App() {
   start-=newX
   startX-=newButtonX
   const movie = document.querySelector('.movies-data');
-  console.log(movie)
   movie.style.transform = "translateX(" + start + "px)"
   const button = document.querySelector('.movie-button-prev');
   button.style.transform = "translateX("+ newButtonX +" +px)"
