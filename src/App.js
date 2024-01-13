@@ -11,7 +11,8 @@ function App() {
   const [omdbData , setOmdb] = useState([])
   const [movie , setMovie] = useState([]);
   const [movieInfoTitle , setMovieInfo] = useState();
-  const [movieYear , setMovieYear] = useState()
+  const [movieYear , setMovieYear] = useState();
+  const [movieId , setMovieId] = useState();
 
   let start = 0
   let newX = -180
@@ -58,10 +59,11 @@ function App() {
     const movieTitle = activMovie.Title;
     const movieYear = activMovie.Year;
     const movieId = activMovie.imdbID;
-    console.log(activMovie.Poster)
+    
     setMovie(activMovie.Poster)
     setMovieInfo(movieTitle)
     setMovieYear(movieYear)
+    setMovieId(movieId)
     
 
     
@@ -97,9 +99,11 @@ function App() {
 
         
           <div className='movie-information-head'>
-            <h1>{movieInfoTitle}</h1>
-            <p>{movieYear}</p>
-            <img src={movie} className='movie-information-img'></img>
+            <h1>Title : {movieInfoTitle}</h1>
+            <p>Movie year : {movieYear}</p>
+            <p>Movie imdbID : {movieId}</p>
+            <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
+            
             
             </div>
       
