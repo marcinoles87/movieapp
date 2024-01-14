@@ -6,6 +6,17 @@
     animation: smooth;
 }
 
+.search-container{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30vw;
+    margin: 20px;
+}
+
+.search-container input{
+    width: 200px;
+}
+
 
 .movie-information-head{
     position: absolute;

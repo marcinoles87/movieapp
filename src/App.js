@@ -13,6 +13,8 @@ function App() {
   const [movieInfoTitle , setMovieInfo] = useState();
   const [movieYear , setMovieYear] = useState();
   const [movieId , setMovieId] = useState();
+  const [searchMovie , setSearchMovie] = useState(false);
+
 
   let start = 0
   let newX = -180
@@ -92,9 +94,19 @@ function App() {
   button.style.transform = "translateX("+ newButtonX +" +px)"
 }
 
+const handleSearchMovie = () =>{
+  setSearchMovie(true)
+}
+
   
   return (
     <div className="App">
+
+      <div className='search-container'>
+        <p>Search movie : </p>
+        {searchMovie ? <input placeholder='search movie'></input> : <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>}
+
+      </div>
 
         
           <div className='movie-information-head'>
