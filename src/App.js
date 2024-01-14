@@ -94,7 +94,8 @@ function App() {
   button.style.transform = "translateX("+ newButtonX +" +px)"
 }
 
-const handleSearchMovie = () =>{
+const handleSearchMovie = (e) =>{
+  const target = e.target
   setSearchMovie(true)
 }
 
