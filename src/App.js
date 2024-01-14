@@ -104,7 +104,8 @@ const handleSearchMovie = () =>{
 
       <div className='search-container'>
         <p>Search movie : </p>
-        {searchMovie ? <input placeholder='search movie'></input> : <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>}
+         <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>
+         {searchMovie ? <input placeholder='search movie'></input> : ''}
 
       </div>
 
