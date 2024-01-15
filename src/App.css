@@ -13,9 +13,26 @@
     margin: 20px;
 }
 
-.search-container input{
-   
+.search-inputandicon input{
+    transition: 1s ease;
 }
+
+.search-inputandicon input:hover{
+    background-color: rgb(190, 190, 190);
+}
+
+.search-inputandicon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:10px;
+}
+
+.search-inputandicon i{
+    margin-right: 10px;
+    
+}
+
 
 
 .movie-information-head{

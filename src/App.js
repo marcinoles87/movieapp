@@ -95,8 +95,9 @@ function App() {
 }
 
 const handleSearchMovie = (e) =>{
-  const target = e.target
+  
   setSearchMovie(true)
+  
 }
 
   
@@ -105,8 +106,11 @@ const handleSearchMovie = (e) =>{
 
       <div className='search-container'>
         <p>Search movie : </p>
-         <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>
+        <div className='search-inputandicon'>
+        <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>
          {searchMovie ? <input placeholder='search movie'></input> : ''}
+        </div>
+       
 
       </div>
 
