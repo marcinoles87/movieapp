@@ -14,6 +14,7 @@ function App() {
   const [movieYear , setMovieYear] = useState();
   const [movieId , setMovieId] = useState();
   const [searchMovie , setSearchMovie] = useState(false);
+  const [activeMovie , activMovie] = useState('')
 
 
   let start = 0
@@ -33,6 +34,16 @@ function App() {
       const finalData = await response.json();
       
       setOmdb(finalData.Search)
+
+      if(activMovie === 's'){
+        
+        const URL = `http://www.omdbapi.com/?s=${activMovie}&page=2&apikey=5217a1e0&i`;
+      const response = await fetch(URL);
+      const finalData = await response.json();
+      
+      setOmdb(finalData.Search)
+
+      }
     
     }
 
@@ -109,6 +120,7 @@ const handleSearchMovie = (e) =>{
         <div className='search-inputandicon'>
         <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>
          {searchMovie ? <input placeholder='search movie'></input> : ''}
+         <button>Search</button>
         </div>
        
 
