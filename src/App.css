@@ -17,6 +17,12 @@
     transition: 1s ease;
 }
 
+.search-inputandicon button{
+    background-color: white;
+    color:black;
+    margin: 5px;
+}
+
 .search-inputandicon input:hover{
     background-color: rgb(190, 190, 190);
 }

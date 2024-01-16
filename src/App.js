@@ -14,7 +14,7 @@ function App() {
   const [movieYear , setMovieYear] = useState();
   const [movieId , setMovieId] = useState();
   const [searchMovie , setSearchMovie] = useState(false);
-  const [activeMovie , activMovie] = useState('')
+  const [inputMovie , setInputMovie] =  useState('');
 
 
   let start = 0
@@ -35,15 +35,15 @@ function App() {
       
       setOmdb(finalData.Search)
 
-      if(activMovie === 's'){
+      // if(activMovie === 's'){
         
-        const URL = `http://www.omdbapi.com/?s=${activMovie}&page=2&apikey=5217a1e0&i`;
-      const response = await fetch(URL);
-      const finalData = await response.json();
+      //   const URL = `http://www.omdbapi.com/?s=${activMovie}&page=2&apikey=5217a1e0&i`;
+      // const response = await fetch(URL);
+      // const finalData = await response.json();
       
-      setOmdb(finalData.Search)
+      // setOmdb(finalData.Search)
 
-      }
+      // }
     
     }
 
@@ -107,8 +107,13 @@ function App() {
 
 const handleSearchMovie = (e) =>{
   
-  setSearchMovie(true)
+  setSearchMovie(!searchMovie)
   
+}
+
+const handleInput = (e) => {
+  const inputValue = e.target.value;
+  console.log(inputValue)
 }
 
   
@@ -118,8 +123,8 @@ const handleSearchMovie = (e) =>{
       <div className='search-container'>
         <p>Search movie : </p>
         <div className='search-inputandicon'>
-        <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>
-         {searchMovie ? <input placeholder='search movie'></input> : ''}
+        <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onMouseEnter={handleSearchMovie}></i>
+         {searchMovie ? <input placeholder='search movie' onChange={handleInput}></input> : ''}
          {searchMovie ? <button>Search</button> : ''}
          
         </div>
