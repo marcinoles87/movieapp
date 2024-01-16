@@ -120,7 +120,8 @@ const handleSearchMovie = (e) =>{
         <div className='search-inputandicon'>
         <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie}></i>
          {searchMovie ? <input placeholder='search movie'></input> : ''}
-         <button>Search</button>
+         {searchMovie ? <button>Search</button> : ''}
+         
         </div>
        
 
