@@ -1,6 +1,7 @@
 import Movie from './components/Movie';
 import './App.css';
 import { useEffect, useState } from 'react';
+import SearchField from './components/SearchField';
 // import { Route, Router, Routes , Link } from 'react-router-dom';
 
 
@@ -105,33 +106,15 @@ function App() {
   button.style.transform = "translateX("+ newButtonX +" +px)"
 }
 
-const handleSearchMovie = (e) =>{
-  
-  setSearchMovie(!searchMovie)
-  
-}
-
-const handleInput = (e) => {
-  const inputValue = e.target.value;
-  console.log(inputValue)
-}
 
   
   return (
     <div className="App">
 
-      <div className='search-container'>
-        <p>Search movie : </p>
-        <div className='search-inputandicon'>
-        <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onMouseEnter={handleSearchMovie}></i>
-         {searchMovie ? <input placeholder='search movie' onChange={handleInput}></input> : ''}
-         {searchMovie ? <button>Search</button> : ''}
-         
-        </div>
+     
        
 
-      </div>
-
+      <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie}></SearchField>
         
           <div className='movie-information-head'>
             <h1>Title : {movieInfoTitle}</h1>
