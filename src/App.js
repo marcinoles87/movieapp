@@ -15,7 +15,8 @@ function App() {
   const [movieYear , setMovieYear] = useState();
   const [movieId , setMovieId] = useState();
   const [searchMovie , setSearchMovie] = useState(false);
-  const [inputMovie , setInputMovie] =  useState('');
+  const [inputedMovie , setInputMovie] =  useState('');
+  const [validMovie , setValidMovie] = useState('')
 
 
   let start = 0
@@ -23,7 +24,7 @@ function App() {
   let startX = 0
   let newButtonX = 180
 
-
+console.log(validMovie)
  
 
   useEffect( () => {
@@ -107,6 +108,7 @@ function App() {
 }
 
 
+
   
   return (
     <div className="App">
@@ -114,10 +116,11 @@ function App() {
      
        
 
-      <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie}></SearchField>
+      <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie} setInputMovie={setInputMovie} inputedMovie={inputedMovie} setValidMovie={setValidMovie}></SearchField>
+        
         
           <div className='movie-information-head'>
-            <h1>Title : {movieInfoTitle}</h1>
+            <h1>Title : {movieInfoTitle} valid movie : {validMovie}</h1>
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
             <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>

@@ -23,19 +23,24 @@
     margin: 5px;
 }
 
-.search-inputandicon input:hover{
-    background-color: rgb(190, 190, 190);
-}
-
 .search-inputandicon{
     display: flex;
     flex-direction: row;
     align-items: center;
     margin:10px;
+   
 }
+
+.search-inputandicon input:hover{
+    background-color: rgb(190, 190, 190);
+    
+}
+
+
 
 .search-inputandicon i{
     margin-right: 10px;
+   
     
 }
 
