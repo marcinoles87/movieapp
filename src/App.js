@@ -17,6 +17,7 @@ function App() {
   const [searchMovie , setSearchMovie] = useState(false);
   const [inputedMovie , setInputMovie] =  useState('');
   const [validMovie , setValidMovie] = useState('')
+  const [newFilm , setNewFilm] = useState(false)
 
 
   let start = 0
@@ -37,15 +38,16 @@ console.log(validMovie)
       
       setOmdb(finalData.Search)
 
-      // if(activMovie === 's'){
+      if(newFilm){
         
-      //   const URL = `http://www.omdbapi.com/?s=${activMovie}&page=2&apikey=5217a1e0&i`;
-      // const response = await fetch(URL);
-      // const finalData = await response.json();
+        console.log('jestem w srodku dziala')
+        const URL = `http://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
+      const response = await fetch(URL);
+      const finalData = await response.json();
       
-      // setOmdb(finalData.Search)
+      setOmdb(finalData.Search)
 
-      // }
+      }
     
     }
 
@@ -116,7 +118,7 @@ console.log(validMovie)
      
        
 
-      <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie} setInputMovie={setInputMovie} inputedMovie={inputedMovie} setValidMovie={setValidMovie}></SearchField>
+      <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie} setInputMovie={setInputMovie} inputedMovie={inputedMovie} setValidMovie={setValidMovie} setNewFilm={setNewFilm} newFilm={newFilm}></SearchField>
         
         
           <div className='movie-information-head'>

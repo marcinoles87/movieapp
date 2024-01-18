@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovie , setValidMovie}) {
+function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovie , setValidMovie , setNewFilm , newFilm}) {
 
     const handleSearchMovie = (e) =>{
   
@@ -12,14 +12,14 @@ function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovi
       
       const handleInput = (e) => {
         const inputValue = e.target.value;
-        console.log(inputValue)
         setInputMovie(inputValue)
         
       }
 
       const validMovie = () => {
         setValidMovie(inputedMovie)
-        setInputMovie('')
+        setNewFilm(!newFilm)
+       
 
       }
 
