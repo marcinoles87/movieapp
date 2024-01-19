@@ -37,6 +37,7 @@ console.log(validMovie)
       const finalData = await response.json();
       
       setOmdb(finalData.Search)
+      console.log(finalData)
 
       if(newFilm){
         
