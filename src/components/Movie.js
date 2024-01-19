@@ -7,7 +7,9 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
     <div className='movie-container'>
       <div className='movies-data'>
 
-        {dataOmdb.map ( (data , index) => {
+        
+
+        {dataOmdb ? dataOmdb.map ( (data , index) => {
           return(
             <div className='movie-item' key={index}>
               <img src={data.Poster} alt={index} onClick={getMovie}></img>
@@ -15,7 +17,7 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
               <p>Year : {data.Year}</p>
               </div>
           )
-        })}
+        }): error } 
           
 
         { data ? data.map( (movie , index) => {

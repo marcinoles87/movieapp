@@ -59,7 +59,7 @@ console.log(validMovie)
 
     fetchData()
     
-  }, [])
+  }, [newFilm])
 
   console.log(omdbData)
 
