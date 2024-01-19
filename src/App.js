@@ -32,6 +32,9 @@ console.log(validMovie)
 
     const fetchData = async () => {
 
+      
+
+        console.log('dalej data bez ')
       const URL = `http://www.omdbapi.com/?s=bat&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
@@ -39,7 +42,9 @@ console.log(validMovie)
       setOmdb(finalData.Search)
       console.log(finalData)
 
-      if(newFilm){
+      
+
+      if(newFilm === true){
         
         console.log('jestem w srodku dziala')
         const URL = `http://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;

@@ -18,10 +18,12 @@ function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovi
 
       const validMovie = () => {
         setValidMovie(inputedMovie)
-        setNewFilm(!newFilm)
+        setNewFilm(true)
        
 
       }
+
+    
 
       
   return (
