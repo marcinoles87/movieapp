@@ -8,7 +8,7 @@ import SearchField from './components/SearchField';
 function App() {
 
   const [data , setData] = useState();
-  const [error , setError] = useState(false);
+  const [error , setError] = useState('error');
   const [omdbData , setOmdb] = useState([])
   const [movie , setMovie] = useState([]);
   const [movieInfoTitle , setMovieInfo] = useState();
@@ -50,6 +50,7 @@ console.log(validMovie)
         const URL = `http://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
+      console.log(finalData.Search)
       
       setOmdb(finalData.Search)
 
@@ -59,7 +60,7 @@ console.log(validMovie)
 
     fetchData()
     
-  }, [newFilm])
+  }, [validMovie])
 
   console.log(omdbData)
 

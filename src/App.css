@@ -24,12 +24,15 @@
 }
 
 .search-inputandicon{
+    width: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin:10px;
+    
    
 }
+
 
 .search-inputandicon input:hover{
     background-color: rgb(190, 190, 190);
