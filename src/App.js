@@ -132,7 +132,7 @@ console.log(validMovie)
             <h1>Title : {movieInfoTitle} valid movie : {validMovie}</h1>
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
-            <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
+            { movie ? movie : 'no Poster'}<img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
             
             
             </div>
