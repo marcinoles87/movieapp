@@ -14,13 +14,17 @@
 }
 
 .search-inputandicon input{
+    height: 30px;
+    border-radius: 10px;
     transition: 1s ease;
 }
 
 .search-inputandicon button{
+    height: 30px;
     background-color: white;
     color:black;
     margin: 5px;
+    border-radius: 10px;
 }
 
 .search-inputandicon{
