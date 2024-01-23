@@ -25,7 +25,7 @@ function App() {
   let startX = 0
   let newButtonX = 180
 
-console.log(validMovie)
+
  
 
   useEffect( () => {
@@ -53,6 +53,13 @@ console.log(validMovie)
       console.log(finalData.Search)
       
       setOmdb(finalData.Search)
+      
+
+      if(finalData.Search === undefined){
+        alert('no data to display')
+      }
+
+
 
       }
     

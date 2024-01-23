@@ -14,7 +14,7 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
             <div className='movie-item' key={index}>
               <img src={data.Poster} alt={index} onClick={getMovie}></img>
               <h1>{data.Title}</h1>
-              <p>Year : {data.Year}</p>
+              
               </div>
           )
         }): error } 
