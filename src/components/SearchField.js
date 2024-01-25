@@ -35,7 +35,7 @@ function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovi
     <div className='search-container'>
     <p>Search movie : </p>
     <div className='search-inputandicon'>
-    <i class="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie} ></i>
+    <i className="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie} ></i>
      {searchMovie ? <input placeholder='search movie' onChange={handleInput}></input> : ''}
      {searchMovie ? <button onClick={validedMovie}>Search</button> : ''}
      

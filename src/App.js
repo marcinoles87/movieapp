@@ -18,6 +18,7 @@ function App() {
   const [inputedMovie , setInputMovie] =  useState('');
   const [validMovie , setValidMovie] = useState('')
   const [newFilm , setNewFilm] = useState(false)
+  const [movieType , setMovieType] = useState();
 
 
   let start = 0
@@ -35,7 +36,7 @@ function App() {
       
 
         console.log('dalej data bez ')
-      const URL = `http://www.omdbapi.com/?s=bat&page=2&apikey=5217a1e0&i`;
+      const URL = `http://www.omdbapi.com/?s=spider&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
       
@@ -56,7 +57,7 @@ function App() {
       
 
       if(finalData.Search === undefined){
-        alert('no data to display')
+        alert('no movie in our data to display , please search another film')
       }
 
 
@@ -90,11 +91,13 @@ function App() {
     const movieTitle = activMovie.Title;
     const movieYear = activMovie.Year;
     const movieId = activMovie.imdbID;
+    const movieType = activMovie.Type;
     
     setMovie(activMovie.Poster)
     setMovieInfo(movieTitle)
     setMovieYear(movieYear)
     setMovieId(movieId)
+    setMovieType(movieType)
     
 
     
@@ -139,6 +142,7 @@ function App() {
             <h1>Title : {movieInfoTitle} valid movie : {validMovie}</h1>
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
+            <p>Type : {movieType}</p>
             { movie ? movie : 'no Poster'}<img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
             
             

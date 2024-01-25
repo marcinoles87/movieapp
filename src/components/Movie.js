@@ -10,10 +10,13 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
         
 
         {dataOmdb ? dataOmdb.map ( (data , index) => {
+          const img = data.Poster
+          console.log(data)
           return(
             <div className='movie-item' key={index}>
-              <img src={data.Poster} alt={index} onClick={getMovie}></img>
+              <img src={img} alt={index} onClick={getMovie}></img>
               <h1>{data.Title}</h1>
+              
               
               </div>
           )
@@ -21,9 +24,10 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
           
 
         { data ? data.map( (movie , index) => {
+          const img = movie.thumbnailUrl
           return(
           <div key={index} className='movie-item'>
-            <img src={movie.thumbnailUrl} alt={movie.title}></img>
+            <img src={img} alt={movie.title} ></img>
             <h1>{movie.title}</h1>
             </div>
        ) })  : error }
