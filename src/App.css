@@ -107,9 +107,10 @@
 }
 
 .movies-data img{
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     margin: 1px;
+    border-radius: 10px;
     transition: 1s ease;
 }
 

@@ -139,7 +139,7 @@ function App() {
         
         
           <div className='movie-information-head'>
-            <h1>Title : {movieInfoTitle} valid movie : {validMovie}</h1>
+            <h1>Title : {movieInfoTitle}</h1>
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
             <p>Type : {movieType}</p>
