@@ -73,6 +73,7 @@
 .movie-information-img{
     width: 45%;
     height: 70%;
+    border-radius: 20px;
 }
 
 
@@ -153,7 +154,7 @@
 
 .rate-container{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 10px;
     width: 50px;
     height: 50px;
