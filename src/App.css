@@ -150,3 +150,20 @@
     border: 2px solid rgb(32, 0, 97);
    
 }
+
+.rate-container{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: rgba(8, 47, 52, 0.855);
+    border: 2px solid green;
+    color:wheat;
+    z-index: 1;
+
+}

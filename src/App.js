@@ -26,6 +26,9 @@ function App() {
   let startX = 0
   let newButtonX = 180
 
+  const randomRate = Math.floor(Math.random()*100);
+  
+
 
  
 
@@ -132,9 +135,6 @@ function App() {
   return (
     <div className="App">
 
-     
-       
-
       <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie} setInputMovie={setInputMovie} inputedMovie={inputedMovie} setValidMovie={setValidMovie} setNewFilm={setNewFilm} newFilm={newFilm}></SearchField>
         
         
@@ -143,6 +143,7 @@ function App() {
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
             <p>Type : {movieType}</p>
+            <p className='rate-container'>{randomRate} %</p>
             { movie ? movie : 'no Poster'}<img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
             
             
