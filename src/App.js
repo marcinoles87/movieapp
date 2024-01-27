@@ -140,12 +140,12 @@ function App() {
         
         
           <div className='movie-information-head'>
+
             <h1>Title : {movieInfoTitle}</h1>
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
             <p>Type : {movieType}</p>
             {movieInfoTitle ?  <p className='rate-container'>{randomRate} %</p> : ''}
-            { movie ? movie : 'no Poster'}
             {movieInfoTitle ? <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img> : ''}
             
             
