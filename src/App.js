@@ -145,7 +145,8 @@ function App() {
             <p>Movie imdbID : {movieId}</p>
             <p>Type : {movieType}</p>
             {movieInfoTitle ?  <p className='rate-container'>{randomRate} %</p> : ''}
-            { movie ? movie : 'no Poster'}<img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
+            { movie ? movie : 'no Poster'}
+            {movieInfoTitle ? <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img> : ''}
             
             
             </div>
