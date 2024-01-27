@@ -39,12 +39,13 @@ function App() {
       
 
         console.log('dalej data bez ')
-      const URL = `http://www.omdbapi.com/?s=spider&page=2&apikey=5217a1e0&i`;
+      const URL = `http://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=3`;
       const response = await fetch(URL);
       const finalData = await response.json();
       
       setOmdb(finalData.Search)
       console.log(finalData)
+
 
       
 
@@ -143,7 +144,7 @@ function App() {
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
             <p>Type : {movieType}</p>
-            <p className='rate-container'>{randomRate} %</p>
+            {movieInfoTitle ?  <p className='rate-container'>{randomRate} %</p> : ''}
             { movie ? movie : 'no Poster'}<img src={movie} className='movie-information-img' alt={movieInfoTitle}></img>
             
             
