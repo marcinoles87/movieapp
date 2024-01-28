@@ -3,11 +3,7 @@ import React from 'react'
 function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovie , setValidMovie , setNewFilm , newFilm}) {
 
     const handleSearchMovie = (e) =>{
-  
-        
         setSearchMovie(!searchMovie)
-        
-        
       }
       
       const handleInput = (e) => {

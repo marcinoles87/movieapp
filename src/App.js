@@ -39,7 +39,7 @@ function App() {
       
 
         console.log('dalej data bez ')
-      const URL = `http://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=3`;
+      const URL = `http://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=1`;
       const response = await fetch(URL);
       const finalData = await response.json();
       

@@ -11,7 +11,7 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
 
         {dataOmdb ? dataOmdb.map ( (data , index) => {
           const img = data.Poster
-          console.log(data)
+         
           return(
             <div className='movie-item' key={index}>
               <img src={img} alt={index} onClick={getMovie}></img>
