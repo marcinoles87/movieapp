@@ -40,24 +40,29 @@ function App() {
 
         console.log('dalej data bez ')
       const URL = `http://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=1`;
+      const URL2 = `http://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=2`;
       const response = await fetch(URL);
+      const response2 = await fetch(URL2);
       const finalData = await response.json();
+      const finalData2 = await response2.json();
+
       
       setOmdb(finalData.Search)
       console.log(finalData)
+      console.log(finalData2)
 
 
       
 
       if(newFilm === true){
         
-        console.log('jestem w srodku dziala')
-        const URL = `http://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
+      const URL = `http://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
       console.log(finalData.Search)
       
       setOmdb(finalData.Search)
+      
       
 
       if(finalData.Search === undefined){
@@ -74,8 +79,6 @@ function App() {
     
   }, [validMovie])
 
-  console.log(omdbData)
-
 
    useEffect( () => {
 
@@ -83,7 +86,7 @@ function App() {
     .then( (response) => response.json())
     .then( (actualData) => setData(actualData))
     .then( setError(true) )
-    console.log(data)
+   
     
 
   }, [error])
