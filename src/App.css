@@ -179,3 +179,19 @@
     transform: scale(1.1);
     
 }
+
+
+@media screen and (max-width:460px){
+
+    p{
+        font-size: 10px;
+    }
+
+    .movie-information-head  {
+        font-size: smaller;
+    }
+
+    .movie-information-head p{
+        font-size: 10px;
+    }
+}
