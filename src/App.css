@@ -189,6 +189,10 @@
 
     .movie-information-head  {
         font-size: smaller;
+        left: 20vw;
+        width: 68%;
+        position: relative;
+        top:0px;
     }
 
     .movie-information-head p{
@@ -210,5 +214,13 @@
         left: 10px;
         width: 30px;
         height: 34px;
+    }
+
+    .movie-item{
+        width: 40vw;
+    }
+
+    .movies-data img{
+        width: 100%;
     }
 }
