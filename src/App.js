@@ -33,9 +33,6 @@ function App() {
   const randomRate = Math.floor(Math.random()*100);
   
 
-
- 
-
   useEffect( () => {
 
     const fetchData = async () => {
@@ -55,12 +52,9 @@ function App() {
       console.log(finalData)
       console.log(finalData2)
 
-
-      
-
       if(newFilm === true){
         
-      const URL = `https://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
+      const URL = `https://www.omdbapi.com/?s=${validMovie}&page=1&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
       setOmdb(finalData.Search)
