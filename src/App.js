@@ -3,9 +3,12 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import SearchField from './components/SearchField';
 // import { Route, Router, Routes , Link } from 'react-router-dom';
+import {Router} from 'react-router'
 
 
 function App() {
+
+  console.log(Router)
 
   const [data , setData] = useState();
   const [error , setError] = useState('error');
@@ -19,6 +22,7 @@ function App() {
   const [validMovie , setValidMovie] = useState('')
   const [newFilm , setNewFilm] = useState(false)
   const [movieType , setMovieType] = useState();
+  const [isChoosen , setChoosen] = useState(false)
 
 
   let start = 0
@@ -59,18 +63,11 @@ function App() {
       const URL = `https://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
       const finalData = await response.json();
-      console.log(finalData.Search)
-      
       setOmdb(finalData.Search)
       
-      
-
       if(finalData.Search === undefined){
         alert('no movie in our data to display , please search another film')
       }
-
-
-
       }
     
     }
@@ -86,6 +83,8 @@ function App() {
     .then( (response) => response.json())
     .then( (actualData) => setData(actualData))
     .then( setError(true) )
+
+    console.log(data)
    
     
 
@@ -105,6 +104,7 @@ function App() {
     setMovieYear(movieYear)
     setMovieId(movieId)
     setMovieType(movieType)
+    setChoosen(true)
     
 
     
@@ -131,6 +131,7 @@ function App() {
   movie.style.transform = "translateX(" + start + "px)"
   const button = document.querySelector('.movie-button-prev');
   button.style.transform = "translateX("+ newButtonX +" +px)"
+
 }
 
 
@@ -144,15 +145,23 @@ function App() {
         
           <div className='movie-information-head'>
 
-            <h1>Title : {movieInfoTitle}</h1>
+            {isChoosen ?
+            
+            <>
+             <h1>Title : {movieInfoTitle}</h1>
             <p>Movie year : {movieYear}</p>
             <p>Movie imdbID : {movieId}</p>
             <p>Type : {movieType}</p>
             {movieInfoTitle ?  <p className='rate-container'>{randomRate} %</p> : ''}
             {movieInfoTitle ? <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img> : ''}
+            </>
+
+            : <h1>'Please choose your movie ...'</h1> }
+
+           
             
             
-            </div>
+          </div>
       
 
     

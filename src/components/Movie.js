@@ -23,7 +23,7 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
         }): error } 
           
 
-        { data ? data.map( (movie , index) => {
+        {/* { data ? data.map( (movie , index) => {
           const img = movie.thumbnailUrl
           return(
           <div key={index} className='movie-item'>
@@ -33,7 +33,7 @@ function Movie({getMovie , dataOmdb ,  data , error}) {
        ) })  : error }
 
      
-        
+         */}
        
       
         
