@@ -15,23 +15,16 @@ function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovi
       const validedMovie = () => {
         setValidMovie(inputedMovie)
         setNewFilm(true)
-        console.log(newFilm)
-        
-       
+        console.log(newFilm) 
 
       }
 
- 
-
-    
-
-      
   return (
 
     <div className='search-container'>
     <p>Search movie : </p>
     <div className='search-inputandicon'>
-    <i className="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie} ></i>
+    <i className="fa-solid fa-magnifying-glass" style={{color:'white'}} onMouseEnter={handleSearchMovie} ></i>
      {searchMovie ? <input placeholder='search movie' onChange={handleInput}></input> : ''}
      {searchMovie ? <button onClick={validedMovie}>Search</button> : ''}
      

@@ -18,16 +18,33 @@
     height: 30px;
     border-radius: 10px;
     transition: 1s ease;
-    color:rgb(120, 119, 119);
+    color:rgb(192, 191, 191);
+    padding: 8px;
+    border: 2px solid white;
+    
+
 }
+
+
 
 .search-inputandicon button{
     height: 30px;
-    background-color: white;
-    color:black;
+    background-color: #00b490;
+    color:white;
     margin: 5px;
     border-radius: 10px;
+    padding: 5px;
+    border: 1px solid white;
+    transition: 0.8s ease;
+    
 }
+
+.search-inputandicon button:hover{
+    background-color: black;
+    color:#00b490;
+}
+
+
 
 .search-inputandicon{
     width: 25px;
@@ -35,12 +52,9 @@
     flex-direction: row;
     align-items: center;
     margin:10px;
-    transition: all 2s;
+    transition: all 0.8s;
     
-    
-   
 }
-
 
 .search-inputandicon input:hover{
     background-color: rgb(190, 190, 190);
@@ -48,15 +62,10 @@
     
 }
 
-
-
 .search-inputandicon i{
     margin-right: 10px;
-   
-    
+  
 }
-
-
 
 .movie-information-head{
     position: absolute;
@@ -175,10 +184,7 @@
 
 }
 
-.search-inputandicon:hover{
-    transform: scale(1.1);
-    
-}
+
 
 
 @media screen and (max-width:460px){
