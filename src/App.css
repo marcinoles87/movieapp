@@ -64,6 +64,7 @@
 
 .search-inputandicon i{
     margin-right: 10px;
+    cursor: pointer;
   
 }
 
@@ -228,5 +229,12 @@
 
     .movies-data img{
         width: 100%;
+    }
+
+    .search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
 }

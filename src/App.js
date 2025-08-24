@@ -8,11 +8,11 @@ import {Router} from 'react-router'
 
 function App() {
 
-  console.log(Router)
 
   const [data , setData] = useState();
   const [error , setError] = useState('error');
   const [omdbData , setOmdb] = useState([])
+  const [omdbData2 , setOmdb2] = useState([])
   const [movie , setMovie] = useState([]);
   const [movieInfoTitle , setMovieInfo] = useState();
   const [movieYear , setMovieYear] = useState();
@@ -37,8 +37,6 @@ function App() {
 
     const fetchData = async () => {
 
-      
-
         console.log('dalej data bez ')
       const URL = `https://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=1`;
       const URL2 = `https://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=2`;
@@ -49,6 +47,7 @@ function App() {
 
       
       setOmdb(finalData.Search)
+      setOmdb2(finalData2.Search)
       console.log(finalData)
       console.log(finalData2)
 
@@ -151,16 +150,11 @@ function App() {
             </>
 
             : <h1>'Please choose your movie ...'</h1> }
-
-           
-            
+ 
             
           </div>
-      
-
     
-     
-        <Movie getMovie={handleGetElement} dataOmdb={omdbData}  data={error ? data : error} error={error}></Movie>
+        <Movie getMovie={handleGetElement} dataOmdb={omdbData} dataOmdb2={omdbData2}  data={error ? data : error} error={error}></Movie>
         <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
         <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>
