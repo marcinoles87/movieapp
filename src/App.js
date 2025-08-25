@@ -141,15 +141,15 @@ function App() {
             {isChoosen ?
             
             <>
-             <h1>Title : {movieInfoTitle}</h1>
-            <p>Movie year : {movieYear}</p>
-            <p>Movie imdbID : {movieId}</p>
+             <h1>{movieInfoTitle}</h1>
+            <p>Year : {movieYear}</p>
+            <p>Imdb ID : {movieId}</p>
             <p>Type : {movieType}</p>
             {movieInfoTitle ?  <p className='rate-container'>{randomRate} %</p> : ''}
             {movieInfoTitle ? <img src={movie} className='movie-information-img' alt={movieInfoTitle}></img> : ''}
             </>
 
-            : <h1>'Please choose your movie ...'</h1> }
+            : <h1>Please choose your movie ...</h1> }
  
             
           </div>
