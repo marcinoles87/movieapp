@@ -180,9 +180,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    background-color: rgba(8, 47, 52, 0.855);
-    border: 2px solid green;
-    color:wheat;
+    background-color: rgba(2, 59, 66, 0.855);
+    border: 2px solid rgb(61, 255, 61);
+    color:rgb(255, 254, 253);
     z-index: 1;
 
 }
@@ -198,7 +198,7 @@
 
     .movie-information-head  {
         font-size: smaller;
-        left: 20vw;
+        left: 25vw;
         width: 68%;
         position: relative;
         top:0px;
@@ -206,6 +206,7 @@
 
     .movie-information-head p{
         font-size: 10px;
+        color:#b0adad;
     }
 
     .movie-information-head h1{
@@ -213,7 +214,7 @@
     }
 
     .movie-information-img {
-        width: 80%;
+        width: 65%;
         height: 70%;
         border-radius: 20px;
         margin-top: 15px;
@@ -243,5 +244,9 @@
 
     .search-inputandicon{
         width: auto;
+    }
+
+    .movie-button-next{
+        right: 50px;
     }
 }
