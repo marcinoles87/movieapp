@@ -66,7 +66,8 @@ function App() {
     }
 
     fetchData()
-    
+      
+
   }, [validMovie])
 
 
@@ -98,9 +99,7 @@ function App() {
     setMovieId(movieId)
     setMovieType(movieType)
     setChoosen(true)
-    
 
-    
   }
 
  
@@ -114,6 +113,8 @@ function App() {
     movie.style.transform = "translateX(" + start + "px)"
     const button = document.querySelector('.movie-button-next');
     button.style.transform = "translateX("+ newButtonX +" +px)"
+
+
  }
 
  const handleOnClickPrev = () => {
@@ -133,7 +134,7 @@ function App() {
   return (
     <div className="App">
 
-      <SearchField setSearchMovie={setSearchMovie} searchMovie={searchMovie} setInputMovie={setInputMovie} inputedMovie={inputedMovie} setValidMovie={setValidMovie} setNewFilm={setNewFilm} newFilm={newFilm}></SearchField>
+      <SearchField  setSearchMovie={setSearchMovie} searchMovie={searchMovie} setInputMovie={setInputMovie} inputedMovie={inputedMovie} setValidMovie={setValidMovie} setNewFilm={setNewFilm} newFilm={newFilm}></SearchField>
         
         
           <div className='movie-information-head'>

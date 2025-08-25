@@ -22,13 +22,12 @@ function SearchField({setSearchMovie , searchMovie , setInputMovie , inputedMovi
   return (
 
     <div className='search-container'>
-    <p>Search movie : </p>
-    <div className='search-inputandicon'>
-    <i className="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie} ></i>
-     {searchMovie ? <input placeholder='search movie' onChange={handleInput}></input> : ''}
-     {searchMovie ? <button onClick={validedMovie}>Search</button> : ''}
-     
-    </div>
+
+        <div className='search-inputandicon'>
+              <i className="fa-solid fa-magnifying-glass" style={{color:'white'}} onClick={handleSearchMovie} ></i>
+                {searchMovie ? <input placeholder='search movie' onChange={handleInput}></input> : ''}
+                {searchMovie ? <button onClick={validedMovie}>Search</button> : ''}
+        </div>
     </div>
   )
 }
