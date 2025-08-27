@@ -220,6 +220,10 @@
         margin-top: 15px;
     }
 
+    .movie-information-head img{
+        height: 50vh;
+    }
+
     .rate-container{
         left: 10px;
         width: 30px;
