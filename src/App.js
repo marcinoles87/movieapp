@@ -45,11 +45,14 @@ function App() {
       const finalData = await response.json();
       const finalData2 = await response2.json();
 
-      
       setOmdb(finalData.Search)
       setOmdb2(finalData2.Search)
       console.log(finalData)
       console.log(finalData2)
+
+      const newConcatFilm = omdbData.concat(omdbData2)
+
+      console.log(newConcatFilm)
 
       if(newFilm === true){
         
@@ -91,9 +94,9 @@ function App() {
 
   const handleGetElement = (e) => {
 
-    console.log(e.target)
+    console.log(omdbData)
+    console.log(omdbData2[e.target.alt].Title)
     const movieIndex = e.target.alt;
-    if(omdbData){
     const activMovie = omdbData[movieIndex];
     const movieTitle = activMovie.Title;
     const movieYear = activMovie.Year;
@@ -105,25 +108,7 @@ function App() {
     setMovieId(movieId)
     setMovieType(movieType)
     setChoosen(true)
-    }else{
-    const activMovie = omdbData2[movieIndex];
-    const movieTitle = activMovie.Title;
-    const movieYear = activMovie.Year;
-    const movieId = activMovie.imdbID;
-    const movieType = activMovie.Type;
-     setMovie(activMovie.Poster)
-    setMovieInfo(movieTitle)
-    setMovieYear(movieYear)
-    setMovieId(movieId)
-    setMovieType(movieType)
-    setChoosen(true)
-
-    }
     
-    
-    
-   
-
   }
 
  
