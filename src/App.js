@@ -54,9 +54,13 @@ function App() {
       if(newFilm === true){
         
       const URL = `https://www.omdbapi.com/?s=${validMovie}&page=1&apikey=5217a1e0&i`;
+      const URL2 = `https://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
       const response = await fetch(URL);
+      const response2 = await fetch(URL2);
       const finalData = await response.json();
+      const finalData2 = await response2.json();
       setOmdb(finalData.Search)
+      setOmdb(finalData2.Search)
       
       if(finalData.Search === undefined){
         alert('no movie in our data to display , please search another film')
