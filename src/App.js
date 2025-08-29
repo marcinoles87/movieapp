@@ -90,19 +90,39 @@ function App() {
 
 
   const handleGetElement = (e) => {
+
+    console.log(e.target)
     const movieIndex = e.target.alt;
+    if(omdbData){
     const activMovie = omdbData[movieIndex];
     const movieTitle = activMovie.Title;
     const movieYear = activMovie.Year;
     const movieId = activMovie.imdbID;
     const movieType = activMovie.Type;
-    
-    setMovie(activMovie.Poster)
+     setMovie(activMovie.Poster)
     setMovieInfo(movieTitle)
     setMovieYear(movieYear)
     setMovieId(movieId)
     setMovieType(movieType)
     setChoosen(true)
+    }else{
+    const activMovie = omdbData2[movieIndex];
+    const movieTitle = activMovie.Title;
+    const movieYear = activMovie.Year;
+    const movieId = activMovie.imdbID;
+    const movieType = activMovie.Type;
+     setMovie(activMovie.Poster)
+    setMovieInfo(movieTitle)
+    setMovieYear(movieYear)
+    setMovieId(movieId)
+    setMovieType(movieType)
+    setChoosen(true)
+
+    }
+    
+    
+    
+   
 
   }
 

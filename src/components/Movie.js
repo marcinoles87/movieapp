@@ -28,7 +28,7 @@ function Movie({getMovie , dataOmdb ,dataOmdb2,  data , error}) {
           const img = data.Poster
           const newIndex = index+10
 
-          console.log(index)
+          console.log(newIndex)
 
          
           return(
