@@ -36,7 +36,7 @@ function App() {
     const fetchData = async () => {
 
         console.log('dalej data bez ')
-      const URL = `https://www.omdbapi.com/?s=spider}&page=1-2&apikey=5217a1e0&i&page=1`;
+      const URL = `https://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=1`;
       const URL2 = `https://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=2`;
       const response = await fetch(URL);
       const response2 = await fetch(URL2);
@@ -91,7 +91,7 @@ function App() {
 
   const handleGetElement = (e) => {
 
-    console.log(e.target.alt)
+  
 
     const movieIndex = e.target.alt;
     const activMovie = omdbData[movieIndex];
