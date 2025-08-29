@@ -28,8 +28,6 @@ function Movie({getMovie , dataOmdb ,dataOmdb2,  data , error}) {
           const img = data.Poster
           const newIndex = index+10
 
-          console.log(newIndex)
-
          
           return(
             <div className='movie-item' key={newIndex}>

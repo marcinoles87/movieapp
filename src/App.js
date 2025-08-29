@@ -2,8 +2,6 @@ import Movie from './components/Movie';
 import './App.css';
 import { useEffect, useState } from 'react';
 import SearchField from './components/SearchField';
-// import { Route, Router, Routes , Link } from 'react-router-dom';
-import {Router} from 'react-router'
 
 
 function App() {
@@ -38,7 +36,7 @@ function App() {
     const fetchData = async () => {
 
         console.log('dalej data bez ')
-      const URL = `https://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=1`;
+      const URL = `https://www.omdbapi.com/?s=spider}&page=1-2&apikey=5217a1e0&i&page=1`;
       const URL2 = `https://www.omdbapi.com/?s=spider&apikey=5217a1e0&i&page=2`;
       const response = await fetch(URL);
       const response2 = await fetch(URL2);
@@ -48,11 +46,13 @@ function App() {
       setOmdb(finalData.Search)
       setOmdb2(finalData2.Search)
       console.log(finalData)
-      console.log(finalData2)
+      console.log(finalData2.Search)
 
-      const newConcatFilm = omdbData.concat(omdbData2)
+      const newConcatFilm = [...omdbData , ...omdbData2]
 
-      console.log(newConcatFilm)
+   
+
+      
 
       if(newFilm === true){
         
@@ -68,6 +68,7 @@ function App() {
       if(finalData.Search === undefined){
         alert('no movie in our data to display , please search another film')
       }
+
       }
     
     }
@@ -85,24 +86,21 @@ function App() {
     .then( (actualData) => setData(actualData))
     .then( setError(true) )
 
-    console.log(data)
-   
-    
-
   }, [error])
 
 
   const handleGetElement = (e) => {
 
-    console.log(omdbData)
-    console.log(omdbData2[e.target.alt].Title)
+    console.log(e.target.alt)
+
     const movieIndex = e.target.alt;
     const activMovie = omdbData[movieIndex];
     const movieTitle = activMovie.Title;
     const movieYear = activMovie.Year;
     const movieId = activMovie.imdbID;
     const movieType = activMovie.Type;
-     setMovie(activMovie.Poster)
+
+    setMovie(activMovie.Poster)
     setMovieInfo(movieTitle)
     setMovieYear(movieYear)
     setMovieId(movieId)
