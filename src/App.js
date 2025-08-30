@@ -22,6 +22,8 @@ function App() {
   const [movieType , setMovieType] = useState();
   const [isChoosen , setChoosen] = useState(false)
 
+  const [newConcat , setConcat] = useState([])
+
 
   let start = 0
   let newX = -180
@@ -48,13 +50,16 @@ function App() {
       console.log(finalData)
       console.log(finalData2.Search)
 
-      const newConcatFilm = [...omdbData , ...omdbData2]
-
-   
-
       
 
+
       if(newFilm === true){
+
+        const newConcatFilm = [...omdbData , ...omdbData2]
+
+        setConcat(newConcatFilm)
+
+      console.log(newConcatFilm)
         
       const URL = `https://www.omdbapi.com/?s=${validMovie}&page=1&apikey=5217a1e0&i`;
       const URL2 = `https://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
@@ -63,7 +68,7 @@ function App() {
       const finalData = await response.json();
       const finalData2 = await response2.json();
       setOmdb(finalData.Search)
-      setOmdb(finalData2.Search)
+      setOmdb2(finalData2.Search)
       
       if(finalData.Search === undefined){
         alert('no movie in our data to display , please search another film')
@@ -91,8 +96,6 @@ function App() {
 
   const handleGetElement = (e) => {
 
-  
-
     const movieIndex = e.target.alt;
     const activMovie = omdbData[movieIndex];
     const movieTitle = activMovie.Title;
@@ -109,7 +112,6 @@ function App() {
     
   }
 
- 
 
  const handleOnClickNext = () => {
   
@@ -134,8 +136,6 @@ function App() {
   button.style.transform = "translateX("+ newButtonX +" +px)"
 
 }
-
-
 
   
   return (
@@ -162,7 +162,7 @@ function App() {
             
           </div>
     
-        <Movie getMovie={handleGetElement} dataOmdb={omdbData} dataOmdb2={omdbData2}  data={error ? data : error} error={error}></Movie>
+        <Movie getMovie={handleGetElement} dataOmdb={omdbData} dataOmdb2={omdbData2} newConcatFilm={newConcat} data={error ? data : error} error={error}></Movie>
         <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
         <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>
