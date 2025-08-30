@@ -24,7 +24,7 @@ function Movie({getMovie , dataOmdb ,dataOmdb2,  data , error}) {
         }): error } 
 
         
-        {dataOmdb2 ? dataOmdb2.map ( (data , index) => {
+        {/* {dataOmdb2 ? dataOmdb2.map ( (data , index) => {
           const img = data.Poster
           const newIndex = index+10
 
@@ -37,7 +37,7 @@ function Movie({getMovie , dataOmdb ,dataOmdb2,  data , error}) {
               
               </div>
           )
-        }): error } 
+        }): error }  */}
           
 
         {/* { data ? data.map( (movie , index) => {

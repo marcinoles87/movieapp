@@ -45,21 +45,18 @@ function App() {
       const finalData = await response.json();
       const finalData2 = await response2.json();
 
-      setOmdb(finalData.Search)
+      setOmdb(finalData.Search.concat(finalData2.Search))
       setOmdb2(finalData2.Search)
       console.log(finalData)
       console.log(finalData2.Search)
+      console.log(omdbData)
 
       
 
 
       if(newFilm === true){
 
-        const newConcatFilm = [...omdbData , ...omdbData2]
-
-        setConcat(newConcatFilm)
-
-      console.log(newConcatFilm)
+        
         
       const URL = `https://www.omdbapi.com/?s=${validMovie}&page=1&apikey=5217a1e0&i`;
       const URL2 = `https://www.omdbapi.com/?s=${validMovie}&page=2&apikey=5217a1e0&i`;
@@ -162,7 +159,7 @@ function App() {
             
           </div>
     
-        <Movie getMovie={handleGetElement} dataOmdb={omdbData} dataOmdb2={omdbData2} newConcatFilm={newConcat} data={error ? data : error} error={error}></Movie>
+        <Movie getMovie={handleGetElement} dataOmdb={omdbData} dataOmdb2={omdbData2} newConcat={newConcat} data={error ? data : error} error={error}></Movie>
         <button className='movie-button-prev' onClick={handleOnClickPrev}> {`<`}</button>
         <button className='movie-button-next' onClick={handleOnClickNext}> {`>`}</button>
     </div>
