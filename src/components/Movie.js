@@ -16,7 +16,7 @@ function Movie({getMovie , dataOmdb ,dataOmdb2,  data , error}) {
          
           return(
             <div className='movie-item' key={index}>
-              <p>{index+1}</p>
+              <p>{data.Title}</p>
               <img src={img} alt={index} onClick={getMovie} className='imgHover'></img>
               <div className='middle'>
                 <h1>{data.Title}</h1>
