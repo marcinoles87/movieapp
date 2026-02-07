@@ -42,6 +42,7 @@
 }
 
 .search-inputandicon button:hover{
+    padding: 6px;
     background-color: #00b490;
     color:white;
 }
@@ -200,7 +201,7 @@
 }
 
 .movie-item:hover{
-    opacity: 0.3;
+    opacity: 1;
 }
 
 .movie-item .middle:hover{
