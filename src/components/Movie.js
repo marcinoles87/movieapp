@@ -10,6 +10,7 @@ function Movie({getMovie , dataOmdb ,dataOmdb2,  data , error}) {
         
 
         {dataOmdb ? dataOmdb.map ( (data , index) => {
+          
           const img = data.Poster
 
          
